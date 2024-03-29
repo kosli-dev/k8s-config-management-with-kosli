@@ -1,3 +1,4 @@
 dev-key.json
 prod-key.json
 env
+.DS_Store
