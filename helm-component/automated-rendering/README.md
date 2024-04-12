@@ -1,1 +1,0 @@
-See https://cloud.google.com/anthos-config-management/docs/tutorials/config-sync-helm to get started with automated rendering in Config Sync.
