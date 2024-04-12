@@ -1,2 +1,0 @@
-# ConfigSync - Foo Source 
-
