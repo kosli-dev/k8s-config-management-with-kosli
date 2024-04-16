@@ -8,15 +8,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+        KOSLI_API_TOKEN: ${{ secrets.KOSLI_API_TOKEN_PROD }}
+        KOSLI_ORG: meekrosoft
+      
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-
     - name: Install dependencies
       run: |
-        python --version
+        sudo apt-get update
+        sudo apt-get install -y yq jq
+
+    - name: setup kosli
+      uses: kosli-dev/setup-cli-action@v2
+
+    - name: create flow
+      run: ./attest-artifacts.sh
