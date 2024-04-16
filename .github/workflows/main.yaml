@@ -19,4 +19,6 @@ jobs:
       uses: kosli-dev/setup-cli-action@v2
 
     - name: create flow
-      run: ./attest-artifacts.sh
+      run: |
+        kosli version
+        ./attest-artifacts.sh
