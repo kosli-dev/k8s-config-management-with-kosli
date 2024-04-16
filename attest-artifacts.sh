@@ -40,7 +40,7 @@ for file in $NS_DIR/*; do
 
 		# write this to a tmp file as json
 		tmp_file=$(mktemp)
-		yq -o=json eval $file > "$tmp_file"
+		yq -o=json eval 'sort_keys(..)' $file > "$tmp_file"
 
 		kosli attest artifact $file \
 			--artifact-type file \
