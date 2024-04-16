@@ -17,6 +17,9 @@ jobs:
 
     - name: setup kosli
       uses: kosli-dev/setup-cli-action@v2
+      with:
+        version:
+          2.8.8
 
     - name: create flow
       run: |
