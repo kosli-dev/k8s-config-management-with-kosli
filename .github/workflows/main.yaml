@@ -15,11 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y yq jq
-
     - name: setup kosli
       uses: kosli-dev/setup-cli-action@v2
 
