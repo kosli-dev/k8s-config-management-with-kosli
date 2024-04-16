@@ -15,6 +15,8 @@ GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 KOSLI_ORG=meekrosoft
 KOSLI_FLOW=gamestore
 
+TEMP_DIR=/tmp/reported
+mkdir -p $TEMP_DIR
 
 kosli create flow --use-empty-template $KOSLI_FLOW --description "Tracking kubernetes config maps in Kosli"
 
@@ -43,7 +45,7 @@ for file in $NS_DIR/*; do
 		yq -o=json eval 'sort_keys(..)' $file > "$tmp_file"
 
 		cat $tmp_file
-		cat $tmp_file > /tmp/reported/$template_slot.json
+		cat $tmp_file > $TEMP_DIR/$template_slot.json
 
 		# attest the file as a sorted json file
 		kosli attest artifact $tmp_file \
