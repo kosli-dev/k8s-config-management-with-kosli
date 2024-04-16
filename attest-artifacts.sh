@@ -42,7 +42,11 @@ for file in $NS_DIR/*; do
 		tmp_file=$(mktemp)
 		yq -o=json eval 'sort_keys(..)' $file > "$tmp_file"
 
-		kosli attest artifact $file \
+		cat $tmp_file
+		cat $tmp_file > /tmp/reported/$template_slot.json
+
+		# attest the file as a sorted json file
+		kosli attest artifact $tmp_file \
 			--artifact-type file \
 			--build-url https://exampleci.com \
 			--commit-url https://github.com/kosli-dev/k8s-config-management-with-kosli/commit/$GITHUB_SHA \
@@ -52,7 +56,7 @@ for file in $NS_DIR/*; do
 			--trail $GITHUB_SHA \
 			--name $template_slot  
 
-		kosli attest generic $file \
+		kosli attest generic $tmp_file \
 			--artifact-type file \
 			--name configmap \
 			--flow yourFlowName \

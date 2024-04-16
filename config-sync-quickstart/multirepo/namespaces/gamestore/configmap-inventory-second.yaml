@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: store-inventory2
   namespace: gamestore
+  labels:
+    app: store
   annotations:
     marketplace.com/comments: "What about dominoes?"
 data:
