@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        KOSLI_API_TOKEN: ${{ secrets.KOSLI_API_TOKEN_PROD }}
+        KOSLI_API_TOKEN: ${{ secrets.KOSLI_API_TOKEN_MEEKROSOFT }}
         KOSLI_ORG: meekrosoft
       
     steps:
