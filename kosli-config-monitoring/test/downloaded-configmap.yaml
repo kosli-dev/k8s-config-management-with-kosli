@@ -1,0 +1,28 @@
+
+# Example of a downloaded ConfigMap from the cluster, managed by Config Sync
+
+apiVersion: v1
+data:
+  competitive: "300"
+  cooperative: "60"
+  single_player: "20"
+kind: ConfigMap
+metadata:
+  annotations:
+    config.k8s.io/owning-inventory: gamestore_repo-sync
+    configmanagement.gke.io/managed: enabled
+    configmanagement.gke.io/source-path: config-sync-quickstart/multirepo/namespaces/gamestore/configmap-inventory.yaml
+    configmanagement.gke.io/token: f48b34eed0d759e56f33c6ecdcf71815143207c5
+    configsync.gke.io/declared-fields: '{"f:data":{"f:competitive":{},"f:cooperative":{},"f:single_player":{}},"f:metadata":{"f:annotations":{"f:marketplace.com/comments":{}},"f:labels":{}}}'
+    configsync.gke.io/git-context: '{"repo":"https://github.com/kosli-dev/k8s-config-management-with-kosli","branch":"main","rev":"HEAD"}'
+    configsync.gke.io/manager: gamestore
+    configsync.gke.io/resource-id: _configmap_gamestore_store-inventory
+    marketplace.com/comments: What about chess?
+  creationTimestamp: "2024-03-29T22:55:41Z"
+  labels:
+    app.kubernetes.io/managed-by: configmanagement.gke.io
+    configsync.gke.io/declared-version: v1
+  name: store-inventory
+  namespace: gamestore
+  resourceVersion: "1119517"
+  uid: f1751cad-bbc0-42bf-b279-cb27e63889b3

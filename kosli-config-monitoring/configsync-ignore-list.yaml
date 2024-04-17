@@ -1,0 +1,16 @@
+metadata:
+  annotations:
+    config.k8s.io/owning-inventory: "DON'T CARE"
+    configmanagement.gke.io/managed: "DON'T CARE"
+    configmanagement.gke.io/source-path: "DON'T CARE"
+    configmanagement.gke.io/token: "DON'T CARE"
+    configsync.gke.io/declared-fields: "DON'T CARE"
+    configsync.gke.io/git-context: "DON'T CARE"
+    configsync.gke.io/manager: "DON'T CARE"
+    configsync.gke.io/resource-id: "DON'T CARE"
+  creationTimestamp: "DON'T CARE"
+  labels:
+    app.kubernetes.io/managed-by: "DON'T CARE"
+    configsync.gke.io/declared-version: "DON'T CARE"
+  resourceVersion: "DON'T CARE"
+  uid: "DON'T CARE"
