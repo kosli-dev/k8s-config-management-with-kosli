@@ -23,8 +23,8 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./app
-        
+        working-directory: ./kosli-config-monitoring
+
     steps:
 
     - uses: actions/checkout@v4
