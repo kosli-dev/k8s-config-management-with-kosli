@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         KOSLI_API_TOKEN: ${{ secrets.KOSLI_API_TOKEN_MEEKROSOFT }}
-        KOSLI_ORG: meekrosoft
+        KOSLI_ORG: meekrosoft-demo
       
     steps:
     - uses: actions/checkout@v2
